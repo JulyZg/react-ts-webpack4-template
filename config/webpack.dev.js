@@ -13,7 +13,10 @@ const config = {
     },
     devServer: {
         // 项目构建后的路径
-        contentBase: resolve(__dirname, 'src'),
+        // contentBase: resolve(__dirname, 'src'), // webpack弃用了这种写法（中文文档不是最新写法
+        static: {
+            directory: resolve(__dirname, 'src'),
+        },
         // 开启gzip压缩
         compress: true,
         //端口号
